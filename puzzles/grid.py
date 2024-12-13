@@ -6,7 +6,10 @@ directions = {
 }
 
 def create_grid(rows):
-    return [ [ r for r in row] for row in rows]
+    return [ list(row) for row in rows]
+
+def create_nm_grid(m, n, value = 0):
+    return [ [ value for _i in range(0,m)] for _j in range(0,n) ]
 
 def print_grid(grid):
     print("\n".join([ "".join(g) for g in grid]))
@@ -53,3 +56,6 @@ def subtract_vector(coor, vector):
     (x,y) = coor
     (x_delta, y_delta) = vector
     return ( x - x_delta, y - y_delta)
+
+def neighbours(coor):
+    return [ add_coor(coor, dir) for dir in directions.values()]
