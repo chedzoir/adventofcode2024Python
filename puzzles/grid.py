@@ -5,6 +5,18 @@ directions = {
     "LEFT": (-1,0)
 }
 
+arrow_directions = { "^":(0,-1),"v":(0,1),">":(1,0),"<":(-1,0)}
+
+def opposite(direction):
+    if direction == "^":
+        return "v"
+    if direction == "v":
+        return "^"
+    if direction == ">":
+        return "<"
+    if direction == "<":
+        return ">"
+
 def create_grid(rows):
     return [ list(row) for row in rows]
 
