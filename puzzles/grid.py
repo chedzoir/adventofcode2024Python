@@ -71,3 +71,6 @@ def subtract_vector(coor, vector):
 
 def neighbours(coor):
     return [ add_coor(coor, dir) for dir in directions.values()]
+
+def manhatten_distance(coor1, coor2):
+    return abs(coor1[0] - coor2[0]) + abs(coor1[1] - coor2[1])
